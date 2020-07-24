@@ -6,7 +6,7 @@ class Hangman {
     this.status = "playing";
   }
 
-  getPuzzle() {
+  get puzzle() {
     // lege variabele om de return in op te slaan.
     let puzzle = "";
 
@@ -24,7 +24,7 @@ class Hangman {
 
   checkStatus() {
     // met .every kun je checken of elk van de items in een array voldoen aan je criteria. Zo ja: true, zo nee: false
-    const finished = this.word.every((letter) => this.guessedLetters.includes(letter));
+    const finished = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === " ");
 
     if (this.remainingGuesses === 0) {
       this.status = "failed";
@@ -35,7 +35,7 @@ class Hangman {
     }
   }
 
-  statusMessage() {
+  get statusMessage() {
     if (this.status === "playing") {
       return `Guesses left: ${this.remainingGuesses}`;
     } else if (this.status === "failed") {
