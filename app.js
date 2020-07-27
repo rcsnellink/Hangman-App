@@ -22,27 +22,30 @@ window.addEventListener("keypress", (e) => {
   renderRemaining();
 });
 
-getPuzzle((error, puzzle) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
+//Hij roept de functie getPuzzle aan, met een functie als argument.
+//Deze functie heeft 2 parameters, error en puzzle.
+
+getPuzzle("2").then(
+  (puzzle) => {
     console.log(puzzle);
+  },
+  (error) => {
+    console.log(`Error: ${error}`);
   }
-});
+);
+
+getCountry("NL").then(
+  (country) => {
+    console.log(country.name);
+  },
+  (error) => {
+    console.log(`The error: ${error}}`);
+  }
+);
+
+// create function for getting country details
+// call it with 2 arguments, country code, callback function
+// make the http req and callback  with country info
+// use the callback to print the country name
+//
 // making an http request
-
-// const countryRequest = new XMLHttpRequest();
-// const countryCode = "NL";
-// countryRequest.open("GET", "http://restcountries.eu/rest/v2/all");
-// countryRequest.send();
-
-// countryRequest.addEventListener("readystatechange", (e) => {
-//   if (e.target.readyState === 4 && e.target.status === 200) {
-//     const countries = JSON.parse(e.target.responseText);
-//     const country = countries.find((country) => country.alpha2Code === countryCode);
-
-//     console.log(country.name);
-//   } else if (e.target.readyState === 4) {
-//     console.log("An error has taken place");
-//   }
-// });
