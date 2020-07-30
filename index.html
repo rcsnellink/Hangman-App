@@ -2,6 +2,7 @@
 
 <html lang="en">
   <head>
+    <link href="./styles/style.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <title>Hangman App</title>
     <meta name="description" content="Hangman App" />
@@ -9,10 +10,13 @@
   </head>
 
   <body>
-    <p id="puzzle"></p>
-    <p id="guessesleft"></p>
-    <script src="requests.js"></script>
-    <script src="hangman.js"></script>
-    <script src="app.js"></script>
+    <div>
+      <div id="puzzle" class="puzzle"></div>
+      <p id="guessesleft"></p>
+      <button id="reset" class="button">Reset</button>
+    </div>
+    <script src="scripts/requests.js"></script>
+    <script src="scripts/hangman.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
