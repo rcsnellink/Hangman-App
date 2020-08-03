@@ -33,3 +33,5 @@ const getCurrentCountry = async () => {
   const country = await getCountry(location.country); // de return van getLocation is niet alleen country, maar ook stad etc
   return country;
 };
+
+export { getPuzzle as default };

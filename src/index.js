@@ -1,3 +1,6 @@
+import Hangman from "./hangman";
+import getPuzzle from "./requests";
+
 // select the elements
 const puzzleEl = document.querySelector("#puzzle");
 const remainingEl = document.querySelector("#guessesleft");
